@@ -1,0 +1,15 @@
+package com.dilip.SpringTut;
+import org.springframework.core.*;
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	ApplicationContext
+        Vehicle v = new Car();
+        v.drive();
+    }
+}

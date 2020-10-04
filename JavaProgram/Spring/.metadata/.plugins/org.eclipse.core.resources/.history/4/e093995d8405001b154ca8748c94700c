@@ -1,0 +1,17 @@
+package com.dilip.SpringTut;
+
+import org.springframework.context.ApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	ApplicationContext ac = new Beanfactory
+        Vehicle v = new Car();
+        v.drive();
+    }
+}

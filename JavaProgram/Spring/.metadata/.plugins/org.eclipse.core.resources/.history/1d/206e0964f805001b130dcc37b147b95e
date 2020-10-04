@@ -1,0 +1,9 @@
+package com.dilip.annotationbased.SpringAnnotationBased;
+
+public class MediaTek implements MobileProcessor {
+
+	public void processor() {
+		System.out.println("MediaTek process add");
+	}
+
+}

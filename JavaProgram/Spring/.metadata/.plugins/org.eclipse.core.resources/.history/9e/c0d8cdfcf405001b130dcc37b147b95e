@@ -1,0 +1,13 @@
+package com.dilip.annotationbased.SpringAnnotationBased;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class AppConfig {
+
+	public Samsung getInstance() {
+		
+		return new Samsung();
+
+	}
+}

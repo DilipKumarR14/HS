@@ -1,0 +1,17 @@
+package com.dilip.annotationbased.SpringAnnotationBased;
+
+public class Samsung {
+
+	public MobileProcessor mobileprocessor;
+	
+	public MobileProcessor getMobileprocessor() {
+		return mobileprocessor;
+	}
+	public void setMobileprocessor(MobileProcessor mobileprocessor) {
+		this.mobileprocessor = mobileprocessor;
+	}
+	public void config() {
+		System.out.println("8gb ram, 24MP Camera");
+		mobileprocessor.processor();
+	}
+}

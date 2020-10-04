@@ -1,0 +1,24 @@
+package com.dilip.annotationbased.SpringAnnotationBased;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+
+public class Samsung {
+
+	@Autowired
+	public MobileProcessor mobileprocessor;
+	
+	public MobileProcessor getMobileprocessor() {
+		return mobileprocessor;
+	}
+	public void setMobileprocessor(MobileProcessor mobileprocessor) {
+		this.mobileprocessor = mobileprocessor;
+	}
+	public void config() {
+		System.out.println("8gb ram, 24MP Camera");
+		// when autowired it will search for Mobileprocesdore in appconfig file 
+		mobileprocessor.processor();
+	}
+	
+}

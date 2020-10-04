@@ -1,0 +1,9 @@
+package com.dilip.annotationbased.SpringAnnotationBased;
+
+public class AppConfig {
+
+	public Samsung getInstance() {
+		return new Samsung();
+		
+	}
+}
