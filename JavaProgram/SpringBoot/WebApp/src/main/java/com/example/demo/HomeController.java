@@ -1,10 +1,9 @@
 package com.example.demo;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller// this is controller 
 public class HomeController {
@@ -13,19 +12,20 @@ public class HomeController {
 	/**
 	 * call the home.jsp file need to download the tomcat jasper
 	 * version similar to embedded tomcat
+	 * @requestparam("name") name is from URL, mapping to Myname
 	 */
-	public String home(HttpServletRequest req) {
+	public ModelAndView home(@RequestParam("name") String Myname) {
 		/**
-		 *  instead of home.jsp if i want to specify just "home"
+		 *  1. instead of home.jsp if i want to specify just "home"
 		 *  add the prefix, suffix in appliaction.properties files
-		 *  i.e to separate the extension .jsp
+		 *  i.e to separate the extension .jsp,
+		 *  2. Modelview for adding the object from URL, 
+		 * 	Set the view which is "home"
+		 *  3. To pass multiple params from URL 1:17:55
 		 */
-		// to get the param from URL
-		String username = req.getParameter("name");
-		// to pass the value from name to web page
-		HttpSession hs = req.getSession();
-		System.out.println("name--> :"+username);
-		hs.setAttribute("name", username);
-		return "home";
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("name", Myname);
+		mv.setViewName("home");
+		return mv;
 	}
 }
