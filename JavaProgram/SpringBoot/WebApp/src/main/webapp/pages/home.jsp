@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>HELLO WORLD ${name}</h1>
+<h2>HELLO WORLD ${obj.aname}, ${obj.aid}, ${obj.lang}</h2>
 
 </body>
 </html>

@@ -14,7 +14,7 @@ public class HomeController {
 	 * version similar to embedded tomcat
 	 * @requestparam("name") name is from URL, mapping to Myname
 	 */
-	public ModelAndView home(@RequestParam("name") String Myname) {
+	public ModelAndView home(Alien alien) {
 		/**
 		 *  1. instead of home.jsp if i want to specify just "home"
 		 *  add the prefix, suffix in appliaction.properties files
@@ -24,7 +24,7 @@ public class HomeController {
 		 *  3. To pass multiple params from URL 1:17:55
 		 */
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("name", Myname);
+		mv.addObject("obj", alien);
 		mv.setViewName("home");
 		return mv;
 	}
