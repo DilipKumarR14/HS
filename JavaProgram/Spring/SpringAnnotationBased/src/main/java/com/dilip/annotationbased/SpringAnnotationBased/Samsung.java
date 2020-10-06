@@ -17,7 +17,7 @@ public class Samsung {
 	}
 	public void config() {
 		System.out.println("8gb ram, 24MP Camera");
-		// when autowired it will search for Mobileprocesdore in appconfig file 
+		// when autowired it will search for Mobileprocessore in appconfig file 
 		mobileprocessor.processor();
 	}
 	
