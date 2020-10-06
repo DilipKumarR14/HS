@@ -40,7 +40,9 @@ public class AlienController {
 		 */
 		System.out.println(repo.findByTech("java"));
 		
-		System.out.println(repo.findByAidGreaterThan(3));
+		System.out.println(repo.findByAidGreaterThan(1));
+		
+		System.out.println(repo.findByTechSorted("java"));
 		
 		
 		return mv;
