@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,18 +32,32 @@ public class AddServlet extends HttpServlet {
 
 		request.setAttribute("sum", sum);
 		
+		/**
+		 * cookie method
+		 */
 		
-		HttpSession session = request.getSession();
+		Cookie cookie = new Cookie("cookieValue", ""+sum);
+		response.addCookie(cookie);
 		
-		session.setAttribute("k", sum);
+		/**
+		 * Session methods
+		 * session to store the value and pass to another servlet
+		 */
+//		HttpSession session = request.getSession();
+//		
+//		session.setAttribute("k", sum);
 
-//		response.sendRedirect("sqroo");
+		/**
+		 * 2 way of passing the data to another servlet
+		 */
+		response.sendRedirect("sqroo");
+		/**
+		 * another way of passing datat to another servlet
+		 */
+//		RequestDispatcher rd = request.getRequestDispatcher("sqroo");
+//		rd.forward(request, response);
 
-
-		RequestDispatcher rd = request.getRequestDispatcher("sqroo");
-		rd.forward(request, response);
-
-		//		res.getWriter().print(sum);
+//		response.getWriter().print(sum);
 
 	}
 }
