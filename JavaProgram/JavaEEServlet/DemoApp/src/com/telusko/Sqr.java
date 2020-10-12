@@ -28,9 +28,9 @@ public class Sqr extends HttpServlet {
 				 i = c.getValue();
 			}
 		}
-		
-		
-		resp.getWriter().print("In the sqroot class : "+i);
+		int j = Integer.parseInt(i);
+		resp.getWriter().print("sqroot class\n");
+		resp.getWriter().print(j*j);
 		
 	}
 }
