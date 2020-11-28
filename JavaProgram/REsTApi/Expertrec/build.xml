@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Testing" default="compile" basedir=".">
+
+	<property name="repopath.dir" location="C:\Users\dilip\.m2\repository" />
+	<property name="clpath.dir" location="C:\Users\dilip\Desktop\JavaProgram\REsTApi\Expertrec" />
+	<property name="build.dir" value="build" />
+
+	<target name="delete">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<target name="create" depends="delete" description="creating the folder">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<target name="compile" depends="create" description="compiling the code">
+		<javac classpathref="classpath" srcdir="${clpath.dir}\src" destdir="${clpath.dir}\${build.dir}" includes="**/*.java" />
+	</target>
+
+	<path id="classpath">
+		<pathelement location="${repopath.dir}\junit\junit\3.8.1\junit-3.8.1.jar" />
+		<pathelement location="${repopath.dir}\org\apache\httpcomponents\httpclient\4.5.12\httpclient-4.5.12.jar" />
+		<pathelement location="${repopath.dir}\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar" />
+		<pathelement location="${repopath.dir}\commons-logging\commons-logging\1.2\commons-logging-1.2.jar" />
+		<pathelement location="${repopath.dir}\commons-codec\commons-codec\1.11\commons-codec-1.11.jar" />
+	</path>
+
+</project>
